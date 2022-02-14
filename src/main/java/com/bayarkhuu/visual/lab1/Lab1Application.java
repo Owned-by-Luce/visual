@@ -1,4 +1,4 @@
-package com.bayarkhuu.visual;
+package com.bayarkhuu.visual.lab1;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -9,7 +9,10 @@ import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
-public class HelloApplication extends Application {
+/**
+ * 2022.02.07 (Лаборатори - 1)
+ */
+public class Lab1Application extends Application {
     public static void main(String[] args) {
         launch();
     }

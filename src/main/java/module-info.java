@@ -11,5 +11,7 @@ module com.bayarkhuu.visual {
     requires eu.hansolo.tilesfx;
 
     opens com.bayarkhuu.visual to javafx.fxml;
-    exports com.bayarkhuu.visual;
+    exports com.bayarkhuu.visual.lab1;
+    exports com.bayarkhuu.visual.lab2;
+    opens com.bayarkhuu.visual.lab1 to javafx.fxml;
 }
