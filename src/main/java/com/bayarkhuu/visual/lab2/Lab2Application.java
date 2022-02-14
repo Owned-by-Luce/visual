@@ -50,7 +50,7 @@ public class Lab2Application extends Application {
     }
 
     /**
-     * TilePage-д товчлуурийг үүсгэж нэмэх
+     * TilePane-д товчлуурийг үүсгэж нэмэх
      *
      * @return TilePane
      */
