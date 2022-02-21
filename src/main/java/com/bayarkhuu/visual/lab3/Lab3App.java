@@ -1,6 +1,7 @@
 package com.bayarkhuu.visual.lab3;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -83,7 +84,7 @@ public class Lab3App extends Application {
 
         Button btnClose = new Button("Close");
         btnClose.setPrefWidth(80);
-        btnClose.setOnAction(e -> primaryStage.close());
+        btnClose.setOnAction(e -> Platform.exit());
         root.add(btnClose, 0, 5, 2, 1);
         GridPane.setHalignment(btnClose, HPos.CENTER);
 
