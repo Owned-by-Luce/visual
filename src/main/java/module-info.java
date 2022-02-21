@@ -13,5 +13,6 @@ module com.bayarkhuu.visual {
     opens com.bayarkhuu.visual to javafx.fxml;
     exports com.bayarkhuu.visual.lab1;
     exports com.bayarkhuu.visual.lab2;
+    exports com.bayarkhuu.visual.lab3;
     opens com.bayarkhuu.visual.lab1 to javafx.fxml;
 }
