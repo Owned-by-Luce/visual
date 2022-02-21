@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class Lab3App extends Application {
@@ -24,6 +25,10 @@ public class Lab3App extends Application {
         root.setPadding(new Insets(15));
         root.setVgap(10);
         root.setHgap(10);
+
+        Label error = new Label();
+        error.setStyle("-fx-text-fill: red");
+        error.setVisible(false);
 
         TextField aInput = new TextField();
         TextField bInput = new TextField();
@@ -51,23 +56,21 @@ public class Lab3App extends Application {
                 b = Double.parseDouble(bInput.getText().trim());
                 c = Double.parseDouble(cInput.getText().trim());
             } catch (NumberFormatException | NullPointerException ex) {
-                System.out.println("Тоон утга оруулна уу.");
+                error.setText("Тоон утга оруулна уу.");
+                error.setVisible(true);
                 return;
             }
 
             double[] quad = quad(a, b, c);
 
             if (quad == null) {
-                System.out.println("Шийдгүй");
+                error.setText("Шийдгүй.");
+                error.setVisible(true);
                 return;
             }
-
-            if (quad.length == 1) {
-                x1.setText(String.valueOf(quad[0]));
-            } else {
-                x1.setText(String.valueOf(quad[0]));
-                x2.setText(String.valueOf(quad[1]));
-            }
+            x1.setText(String.valueOf(quad[0]));
+            x2.setText(String.valueOf(quad[1]));
+            error.setVisible(false);
         });
         root.add(btnSolve, 0, 3, 2, 1);
         GridPane.setHalignment(btnSolve, HPos.CENTER);
@@ -84,7 +87,9 @@ public class Lab3App extends Application {
         root.add(btnClose, 0, 5, 2, 1);
         GridPane.setHalignment(btnClose, HPos.CENTER);
 
-        Scene scene = new Scene(root, 215, 230);
+        root.add(error, 0, 6, 2, 1);
+
+        Scene scene = new Scene(root, 215, 255);
         primaryStage.setTitle("Quad");
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -98,7 +103,7 @@ public class Lab3App extends Application {
             return new double[]{x1, x2};
         } else if (d == 0) {
             double x1 = -b / (2 * a);
-            return new double[]{x1};
+            return new double[]{x1, x1};
         } else {
             return null;
         }
