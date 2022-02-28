@@ -9,10 +9,11 @@
     <children>
         <VBox spacing="5.0">
             <children>
-                <RadioButton fx:id="bird" mnemonicParsing="false" onAction="#change" selected="true" text="Bird">
-               <toggleGroup>
-                  <ToggleGroup fx:id="rad" />
-               </toggleGroup></RadioButton>
+                <RadioButton fx:id="bird" mnemonicParsing="false" onAction="#change" text="Bird">
+                    <toggleGroup>
+                        <ToggleGroup fx:id="rad" />
+                    </toggleGroup>
+                </RadioButton>
                 <RadioButton fx:id="cat" mnemonicParsing="false" onAction="#change" text="Cat" toggleGroup="$rad" />
                 <RadioButton fx:id="dog" mnemonicParsing="false" onAction="#change" text="Dog" toggleGroup="$rad" />
                 <RadioButton fx:id="rabbit" layoutX="10.0" layoutY="44.0" mnemonicParsing="false" onAction="#change" text="Rabbit" toggleGroup="$rad" />
