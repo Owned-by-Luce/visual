@@ -2,6 +2,7 @@ package com.bayarkhuu.visual.home.home2;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -23,6 +24,7 @@ public class Home2App extends Application {
     public void start(Stage primaryStage) {
         VBox root = new VBox();
         root.setPadding(new Insets(15));
+        root.setSpacing(10);
         root.setStyle("-fx-background-color: #FFE0C1;");
 
         StackPane stackPane = new StackPane();
@@ -71,13 +73,41 @@ public class Home2App extends Application {
 
         HBox buttons = new HBox();
         buttons.setSpacing(10);
+        buttons.setAlignment(Pos.TOP_CENTER);
 
         Button btnCompute = getButton("Compute");
-        buttons.getChildren().addAll(btnCompute);
-
+        Button btnReset = getButton("Reset");
+        Button btnTotals = getButton("Totals");
+        Button btnExit = getButton("Exit");
+        buttons.getChildren().addAll(btnCompute, btnReset, btnTotals, btnExit);
         root.getChildren().addAll(stackPane, buttons);
 
-        Scene scene = new Scene(root, 450, 300);
+        btnCompute.setOnAction(e -> {
+            double doublePrice = Double.parseDouble(price.getText().isEmpty() ? "0" : price.getText());
+            double doubleQuantity = Double.parseDouble(quantity.getText().isEmpty() ? "0" : quantity.getText());
+            subtotal.setText(String.valueOf(doublePrice * doubleQuantity));
+        });
+
+        btnReset.setOnAction(e -> {
+            title.clear();
+            identifier.clear();
+            price.clear();
+            quantity.clear();
+            subtotal.clear();
+            tax.clear();
+            total.clear();
+        });
+
+        btnTotals.setOnAction(e -> {
+            double doubleSubtotal = Double.parseDouble(subtotal.getText());
+            double doubleTax = doubleSubtotal * 0.06;
+            tax.setText(String.valueOf(doubleTax));
+            total.setText(String.valueOf(doubleSubtotal + doubleTax));
+        });
+
+        btnExit.setOnAction(e -> primaryStage.close());
+
+        Scene scene = new Scene(root, 450, 320);
         primaryStage.setTitle("Book Store");
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -98,8 +128,7 @@ public class Home2App extends Application {
 
     private Button getButton(String caption) {
         Button btn = new Button(caption);
-        btn.setStyle("-fx-background-color: #FCC281; -fx-font-weight: bold");
-        btn.setFont(new Font(15));
+        btn.setStyle("-fx-background-color: #FCC281; -fx-font-size: 15; -fx-font-weight: bold; -fx-border-color: white; -fx-border-radius: 8; -fx-background-radius: 8");
         return btn;
     }
 }
