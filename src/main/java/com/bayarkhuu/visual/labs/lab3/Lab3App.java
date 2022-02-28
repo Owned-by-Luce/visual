@@ -1,4 +1,4 @@
-package com.bayarkhuu.visual.lab3;
+package com.bayarkhuu.visual.labs.lab3;
 
 import javafx.application.Application;
 import javafx.application.Platform;

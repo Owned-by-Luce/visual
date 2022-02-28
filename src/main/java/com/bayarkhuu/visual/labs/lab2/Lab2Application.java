@@ -1,4 +1,4 @@
-package com.bayarkhuu.visual.lab2;
+package com.bayarkhuu.visual.labs.lab2;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
