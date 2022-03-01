@@ -14,6 +14,10 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
+/**
+ * Гэрийн даалгавар
+ * @author Баярхүү.Лув
+ */
 public class Home2App extends Application {
 
     public static void main(String[] args) {
