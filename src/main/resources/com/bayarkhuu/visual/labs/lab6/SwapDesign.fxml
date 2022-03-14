@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
 <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bayarkhuu.visual.labs.lab6.SwapController">
    <children>
       <ListView fx:id="leftView" prefHeight="200.0" prefWidth="200.0" />
-      <VBox prefHeight="200.0" prefWidth="100.0">
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
          <children>
             <Button mnemonicParsing="false" onAction="#toRight" text="&gt;" />
             <Button mnemonicParsing="false" onAction="#toLeft" text="&lt;" />
          </children>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
       </VBox>
       <ListView fx:id="rightView" prefHeight="200.0" prefWidth="200.0" />
    </children>
