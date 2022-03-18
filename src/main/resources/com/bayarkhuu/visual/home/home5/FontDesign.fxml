@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane hgap="8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="326.0" prefWidth="414.0" vgap="8.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bayarkhuu.visual.home.home5.FontController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="70.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints fillHeight="false" maxHeight="20.0" prefHeight="10.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="150.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="120.0" prefHeight="10.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <ListView fx:id="font" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" />
+      <Label text="Font:" />
+      <ListView fx:id="style" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Label text="Style" GridPane.columnIndex="1" />
+      <Label text="Size" GridPane.columnIndex="2" />
+      <ListView fx:id="size" minWidth="70.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+      <Button alignment="CENTER" minWidth="80.0" mnemonicParsing="false" onAction="#ok" text="OK" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+      <StackPane prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: #D9D5C0; -fx-border-radius: 8;" GridPane.rowIndex="2">
+         <children>
+            <Label style="-fx-background-color: #F4F4F4;" text="Effects" textFill="#0830de" translateX="-30.0" translateY="-56.0" />
+            <VBox prefHeight="200.0" prefWidth="100.0" translateY="10.0">
+               <children>
+                  <CheckBox fx:id="underline" mnemonicParsing="false" text="Underline">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin></CheckBox>
+                  <Label text="Color:" />
+                  <HBox spacing="5.0">
+                     <children>
+                        <ComboBox fx:id="color" prefWidth="100.0" />
+                        <Label fx:id="colorSample" alignment="BOTTOM_LEFT" contentDisplay="CENTER" style="-fx-border-color: transparent transparent black transparent; -fx-border-width: 3;" text="A" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+         <GridPane.margin>
+            <Insets top="10.0" />
+         </GridPane.margin></StackPane>
+      <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+      <StackPane layoutX="20.0" layoutY="216.0" prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: #D9D5C0; -fx-border-radius: 8;" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2">
+         <children>
+            <Label style="-fx-background-color: #F4F4F4;" text="Sample" textFill="#0830de" translateX="-45.0" translateY="-56.0" />
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: #CECABD;" translateY="10.0">
+               <children>
+                  <Label fx:id="sample" alignment="CENTER" contentDisplay="CENTER" text="AaBbYyZz" textAlignment="CENTER" />
+               </children>
+               <StackPane.margin>
+                  <Insets bottom="10.0" />
+               </StackPane.margin>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="15.0" left="12.0" right="12.0" top="15.0" />
+         </padding>
+         <GridPane.margin>
+            <Insets top="10.0" />
+         </GridPane.margin>
+      </StackPane>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</GridPane>

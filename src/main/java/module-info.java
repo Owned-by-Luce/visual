@@ -18,8 +18,10 @@ module com.bayarkhuu.visual {
     exports com.bayarkhuu.visual.labs.lab5;
     exports com.bayarkhuu.visual.labs.lab6;
     exports com.bayarkhuu.visual.home.home2;
+    exports com.bayarkhuu.visual.home.home5;
     opens com.bayarkhuu.visual.labs.lab1 to javafx.fxml;
     opens com.bayarkhuu.visual.labs.lab4 to javafx.fxml;
     opens com.bayarkhuu.visual.labs.lab5 to javafx.fxml;
     opens com.bayarkhuu.visual.labs.lab6 to javafx.fxml;
+    opens com.bayarkhuu.visual.home.home5 to javafx.fxml;
 }
