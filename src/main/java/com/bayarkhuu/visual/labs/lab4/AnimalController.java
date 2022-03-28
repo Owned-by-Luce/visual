@@ -16,7 +16,7 @@ public class AnimalController {
 
     @FXML
     protected void change(ActionEvent e) throws FileNotFoundException {
-        File file = new File("src/main/java/com/bayarkhuu/visual/labs/lab4/images/" + ((RadioButton) e.getSource()).getText() + ".gif");
+        File file = new File("src/main/resources/static/animals/" + ((RadioButton) e.getSource()).getText() + ".gif");
         imageView.setImage(new Image(new FileInputStream(file)));
     }
 }
