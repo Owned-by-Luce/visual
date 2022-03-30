@@ -39,8 +39,4 @@ public class Occupancy {
     public String getRateApplied() {
         return rateApplied;
     }
-
-    public String getPhoneUse() {
-        return phoneUse;
-    }
 }

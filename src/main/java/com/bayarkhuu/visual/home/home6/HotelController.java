@@ -73,5 +73,4 @@ public class HotelController {
     private void close() {
         System.exit(0);
     }
-
 }
