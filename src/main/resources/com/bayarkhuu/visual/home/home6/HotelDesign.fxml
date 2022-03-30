@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane hgap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="264.0" prefWidth="411.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bayarkhuu.visual.home.home6.HotelController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Button fx:id="btnCostumers" mnemonicParsing="false" onAction="#customer" prefHeight="73.0" prefWidth="200.0" text="Customers...">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font></Button>
+      <Button fx:id="btnOccupancies" layoutX="10.0" layoutY="41.0" mnemonicParsing="false" onAction="#occupancy" prefHeight="73.0" prefWidth="200.0" text="Occupancies..." GridPane.columnIndex="1">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font></Button>
+      <Button fx:id="btnRooms" layoutX="10.0" layoutY="41.0" mnemonicParsing="false" onAction="#room" prefHeight="73.0" prefWidth="200.0" text="Rooms..." GridPane.rowIndex="1">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font></Button>
+      <Button fx:id="btnPayments" layoutX="210.0" layoutY="41.0" mnemonicParsing="false" onAction="#payment" prefHeight="73.0" prefWidth="200.0" text="Payments..." GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font></Button>
+      <Button fx:id="btnEmployees" layoutX="10.0" layoutY="174.0" mnemonicParsing="false" onAction="#employee" prefHeight="73.0" prefWidth="200.0" text="Employees..." GridPane.rowIndex="2">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font></Button>
+      <Button layoutX="210.0" layoutY="174.0" mnemonicParsing="false" onAction="#close" prefHeight="73.0" prefWidth="200.0" text="Close" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font></Button>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</GridPane>

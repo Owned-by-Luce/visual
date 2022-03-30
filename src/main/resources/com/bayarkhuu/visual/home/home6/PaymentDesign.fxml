@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane hgap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="493.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="180.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="120.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label text="Payment Date:" GridPane.halignment="RIGHT" />
+      <DatePicker prefHeight="27.0" prefWidth="366.0" GridPane.columnIndex="1" GridPane.columnSpan="4" />
+      <Label text="Payment Processed by" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+      <Separator prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="1" />
+      <Label text="Employee #:" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+      <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <TextField GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="2" />
+      <Label text="Processed for Customer" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+      <Separator prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="3" />
+      <Label text="Account #:" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+      <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <TextField GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="5" />
+      <Label text="Room Occupied From:" GridPane.halignment="RIGHT" GridPane.rowIndex="6" />
+      <DatePicker prefHeight="26.0" prefWidth="304.0" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="6" />
+      <Label text="To:" GridPane.halignment="RIGHT" GridPane.rowIndex="7" />
+      <DatePicker prefHeight="28.0" prefWidth="304.0" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="7" />
+      <Label text="Total Nights:" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+      <TextField GridPane.columnIndex="3" GridPane.rowIndex="8" />
+      <Label text="Payment" GridPane.halignment="RIGHT" GridPane.rowIndex="9" />
+      <Separator prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="9" />
+      <Label text="Phone Use:" GridPane.halignment="RIGHT" GridPane.rowIndex="10" />
+      <TextField GridPane.columnIndex="1" GridPane.rowIndex="10" />
+      <TextField GridPane.columnIndex="3" GridPane.rowIndex="10" />
+      <Label text="Amt Charged:" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+      <Label text="/night" GridPane.columnIndex="4" GridPane.rowIndex="10" />
+      <Label text="Sub-Total:" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+      <TextField GridPane.columnIndex="3" GridPane.rowIndex="11" />
+      <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="159.0" text="Calculate" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="12" />
+      <Label text="Tax Rate:" GridPane.columnIndex="2" GridPane.rowIndex="13" />
+      <Label text="Tax Amount:" GridPane.columnIndex="2" GridPane.rowIndex="14" />
+      <Label text="Amount Paid:" GridPane.columnIndex="2" GridPane.rowIndex="15" />
+      <TextField GridPane.columnIndex="3" GridPane.rowIndex="13" />
+      <TextField GridPane.columnIndex="3" GridPane.rowIndex="14" />
+      <TextField GridPane.columnIndex="3" GridPane.rowIndex="15" />
+      <Label text="\%" GridPane.columnIndex="4" GridPane.rowIndex="13" />
+      <Separator prefWidth="200.0" GridPane.columnSpan="5" GridPane.rowIndex="16" />
+      <Label text="Receipt #:" GridPane.halignment="RIGHT" GridPane.rowIndex="17" />
+      <TextField GridPane.columnIndex="1" GridPane.rowIndex="17" />
+   </children>
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+   </padding>
+</GridPane>
