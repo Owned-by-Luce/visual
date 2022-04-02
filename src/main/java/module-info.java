@@ -23,6 +23,7 @@ module com.bayarkhuu.visual {
     exports com.bayarkhuu.visual.home.home5;
     exports com.bayarkhuu.visual.home.home6;
     exports com.bayarkhuu.visual.home.home7;
+    exports com.bayarkhuu.visual.exam.yawts;
     opens com.bayarkhuu.visual.labs.lab1 to javafx.fxml;
     opens com.bayarkhuu.visual.labs.lab4 to javafx.fxml;
     opens com.bayarkhuu.visual.labs.lab5 to javafx.fxml;
@@ -32,4 +33,5 @@ module com.bayarkhuu.visual {
     opens com.bayarkhuu.visual.home.home4 to javafx.fxml;
     opens com.bayarkhuu.visual.home.home5 to javafx.fxml;
     opens com.bayarkhuu.visual.home.home6 to javafx.fxml;
+    opens com.bayarkhuu.visual.exam.yawts to javafx.fxml;
 }
