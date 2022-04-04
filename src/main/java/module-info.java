@@ -9,6 +9,8 @@ module com.bayarkhuu.visual {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
+    requires java.prefs;
+    requires jakarta.xml.bind;
 
     exports com.bayarkhuu.visual.labs.lab1;
     exports com.bayarkhuu.visual.labs.lab2;
@@ -18,6 +20,7 @@ module com.bayarkhuu.visual {
     exports com.bayarkhuu.visual.labs.lab6;
     exports com.bayarkhuu.visual.labs.lab7;
     exports com.bayarkhuu.visual.labs.lab8;
+    exports com.bayarkhuu.visual.labs.lab9;
     exports com.bayarkhuu.visual.home.home2;
     exports com.bayarkhuu.visual.home.home4;
     exports com.bayarkhuu.visual.home.home5;
@@ -30,6 +33,7 @@ module com.bayarkhuu.visual {
     opens com.bayarkhuu.visual.labs.lab6 to javafx.fxml;
     opens com.bayarkhuu.visual.labs.lab7 to javafx.fxml;
     opens com.bayarkhuu.visual.labs.lab8 to javafx.fxml;
+    opens com.bayarkhuu.visual.labs.lab9 to javafx.fxml, jakarta.xml.bind;
     opens com.bayarkhuu.visual.home.home4 to javafx.fxml;
     opens com.bayarkhuu.visual.home.home5 to javafx.fxml;
     opens com.bayarkhuu.visual.home.home6 to javafx.fxml;
