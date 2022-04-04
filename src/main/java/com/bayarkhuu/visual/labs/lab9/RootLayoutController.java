@@ -13,9 +13,6 @@ public class RootLayoutController {
         this.mainApp = mainApp;
     }
 
-    /**
-     * Creates an empty address book.
-     */
     @FXML
     private void handleNew() {
         mainApp.getPersonData().clear();
