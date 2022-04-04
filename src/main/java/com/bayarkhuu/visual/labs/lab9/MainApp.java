@@ -24,7 +24,7 @@ import java.util.prefs.Preferences;
 public class MainApp extends Application {
     private Stage primaryStage;
     private BorderPane rootLayout;
-    private ObservableList<Person> personData = FXCollections.observableArrayList();
+    private final ObservableList<Person> personData = FXCollections.observableArrayList();
 
     public MainApp() {
         personData.add(new Person("Hans", "Muster"));
@@ -162,11 +162,6 @@ public class MainApp extends Application {
         }
     }
 
-    /**
-     * Saves the current person data to the specified file.
-     *
-     * @param file
-     */
     public void savePersonDataToFile(File file) {
         try {
             JAXBContext context = JAXBContext
