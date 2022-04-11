@@ -33,7 +33,7 @@ public class BirthdayStatisticsController {
     public void setPersonData(List<Person> persons) {
         int[] monthCounter = new int[12];
         for (Person p : persons) {
-            int month = p.getBirthday().getMonthValue() - 1;
+            int month = p.getBirthDate().getMonthValue() - 1;
             monthCounter[month]++;
         }
 

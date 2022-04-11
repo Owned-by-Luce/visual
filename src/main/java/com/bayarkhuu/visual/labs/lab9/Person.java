@@ -1,17 +1,20 @@
 package com.bayarkhuu.visual.labs.lab9;
 
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javafx.beans.property.*;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 import java.time.LocalDate;
 
 public class Person {
-    private final StringProperty firstName;
-    private final StringProperty lastName;
-    private final StringProperty street;
-    private final IntegerProperty postalCode;
-    private final StringProperty city;
-    private final ObjectProperty<LocalDate> birthday;
+    private Integer id;
+    private String firstName;
+    private String lastName;
+    private String street;
+    private int postalCode;
+    private String city;
+    private LocalDate birthDate;
 
     /**
      * Default constructor.
@@ -21,69 +24,78 @@ public class Person {
     }
 
     public Person(String firstName, String lastName) {
-        this.firstName = new SimpleStringProperty(firstName);
-        this.lastName = new SimpleStringProperty(lastName);
-        this.street = new SimpleStringProperty("some street");
-        this.postalCode = new SimpleIntegerProperty(1234);
-        this.city = new SimpleStringProperty("some city");
-        this.birthday = new SimpleObjectProperty<>(LocalDate.of(1999, 2, 21));
+        this.id = null;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.street = "some street";
+        this.postalCode = 1234;
+        this.city = "some city";
+        this.birthDate = LocalDate.of(1999, 2, 21);
+    }
+
+    public Person(StringProperty firstName, StringProperty lastName, StringProperty street, IntegerProperty postalCode, StringProperty city, ObjectProperty<LocalDate> birthDate) {
+        this.firstName = firstName.getValue();
+        this.lastName = lastName.getValue();
+        this.street = street.getValue();
+        this.postalCode = postalCode.getValue();
+        this.city = city.getValue();
+        this.birthDate = birthDate.getValue();
     }
 
     public String getFirstName() {
-        return firstName.get();
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName.set(firstName);
-    }
-
-    public StringProperty firstNameProperty() {
         return firstName;
     }
 
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public StringProperty firstNameProperty() {
+        return new SimpleStringProperty(firstName);
+    }
+
     public String getLastName() {
-        return lastName.get();
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName.set(lastName);
-    }
-
-    public StringProperty lastNameProperty() {
         return lastName;
     }
 
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public StringProperty lastNameProperty() {
+        return new SimpleStringProperty(lastName);
+    }
+
     public String getStreet() {
-        return street.get();
+        return street;
     }
 
     public void setStreet(String street) {
-        this.street.set(street);
+        this.street = street;
     }
 
     public int getPostalCode() {
-        return postalCode.get();
+        return postalCode;
     }
 
     public void setPostalCode(int postalCode) {
-        this.postalCode.set(postalCode);
+        this.postalCode = postalCode;
     }
 
     public String getCity() {
-        return city.get();
+        return city;
     }
 
     public void setCity(String city) {
-        this.city.set(city);
+        this.city = city;
     }
 
-    @XmlJavaTypeAdapter(LocalDateAdapter.class)
-    public LocalDate getBirthday() {
-        return birthday.get();
+    public LocalDate getBirthDate() {
+        return birthDate;
     }
 
-    public void setBirthday(LocalDate birthday) {
-        this.birthday.set(birthday);
+    public void setBirthDate(LocalDate birthDate) {
+        this.birthDate = birthDate;
     }
 
 }

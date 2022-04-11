@@ -22,9 +22,9 @@ import java.io.IOException;
 import java.util.prefs.Preferences;
 
 public class MainApp extends Application {
+    private final ObservableList<Person> personData = FXCollections.observableArrayList();
     private Stage primaryStage;
     private BorderPane rootLayout;
-    private final ObservableList<Person> personData = FXCollections.observableArrayList();
 
     public MainApp() {
         personData.add(new Person("Hans", "Muster"));

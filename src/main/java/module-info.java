@@ -11,6 +11,7 @@ module com.bayarkhuu.visual {
     requires eu.hansolo.tilesfx;
     requires java.prefs;
     requires jakarta.xml.bind;
+    requires java.sql;
 
     exports com.bayarkhuu.visual.labs.lab1;
     exports com.bayarkhuu.visual.labs.lab2;
