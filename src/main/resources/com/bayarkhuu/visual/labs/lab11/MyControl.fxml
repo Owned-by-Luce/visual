@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:controller="com.bayarkhuu.visual.labs.lab11.MyControl" prefHeight="59.0" prefWidth="153.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <CheckBox alignment="TOP_CENTER" layoutX="55.0" layoutY="23.0" mnemonicParsing="false" text="yup" />
+      <Label alignment="TOP_CENTER" layoutX="13.0" text="This is awesome, right?" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.5" AnchorPane.topAnchor="0.0" />
+   </children>
+</AnchorPane>
