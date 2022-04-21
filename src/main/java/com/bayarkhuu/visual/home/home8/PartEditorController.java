@@ -8,20 +8,17 @@ public class PartEditorController {
 
     @FXML
     private void newMake() {
-        Modal modal = new Modal("Make Editor", new Editor("Make"), 225, 82);
-        modal.show();
+        new Modal("Make Editor", new Editor("Make"), 225, 82);
     }
 
     @FXML
     private void newModel() {
-        Modal modal = new Modal("Model Editor", new Editor("Model"), 235, 82);
-        modal.show();
+        new Modal("Model Editor", new Editor("Model"), 235, 82);
     }
 
     @FXML
     private void newCategory() {
-        Modal modal = new Modal("Item Category", new Editor("Category"), 245, 82);
-        modal.show();
+        new Modal("Item Category", new Editor("Category"), 245, 82);
     }
 
     @FXML

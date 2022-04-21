@@ -12,5 +12,6 @@ public class Modal extends Stage {
         setScene(new Scene(component, w, h));
         initOwner(Home8App.getPrimaryStage());
         initModality(Modality.WINDOW_MODAL);
+        show();
     }
 }
