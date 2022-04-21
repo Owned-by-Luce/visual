@@ -11,8 +11,7 @@ public class PartController {
     @FXML
     private void newAutoPart() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("PartEditor.fxml"));
-        Modal modal = new Modal("", loader.load(), 425, 238);
-        modal.show();
+        new Modal("", loader.load(), 425, 238);
     }
 
     @FXML
