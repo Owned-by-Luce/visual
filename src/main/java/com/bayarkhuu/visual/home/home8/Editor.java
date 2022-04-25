@@ -1,5 +1,7 @@
 package com.bayarkhuu.visual.home.home8;
 
+import com.bayarkhuu.visual.home.home8.model.Item;
+import com.bayarkhuu.visual.labs.lab9.Repository;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -8,8 +10,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
+import java.util.function.Consumer;
+
 public class Editor extends VBox {
-    public Editor(String name) {
+    private final Repository<Item> repository = new Repository<>(Item.class);
+
+    public Editor(String name, Consumer<Item> afterSave) {
         setPadding(new Insets(10));
         setSpacing(10);
 
@@ -26,6 +32,17 @@ public class Editor extends VBox {
 
         Button btnOk = new Button("OK");
         btnOk.setPrefWidth(65);
+        btnOk.setOnAction(e -> {
+            if (!input.getText().isEmpty()) {
+                Integer id = repository.save(new Item(name, input.getText()));
+                if (id != null) {
+                    afterSave.accept(repository.findById(id));
+                    ((Button) e.getTarget()).getScene().getWindow().hide();
+                }
+            } else {
+                input.setStyle("-fx-border-color: darkred");
+            }
+        });
 
         Button btnCancel = new Button("Cancel");
         btnCancel.setPrefWidth(65);

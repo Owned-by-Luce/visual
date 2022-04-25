@@ -43,7 +43,7 @@
       <Label text="Part #:" GridPane.columnIndex="2" GridPane.rowIndex="4" />
       <TextField fx:id="txtPartNumber" GridPane.columnIndex="3" GridPane.rowIndex="4" />
       <TextField fx:id="txtPartName" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="5" />
-      <Button fx:id="btnSubmit" mnemonicParsing="false" text="Submit" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="6" />
+      <Button fx:id="btnSubmit" mnemonicParsing="false" onAction="#submit" text="Submit" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="6" />
       <Button fx:id="btnClose" mnemonicParsing="false" onAction="#close" text="Close" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="6" />
       <TextField fx:id="txtItemNumber" GridPane.columnIndex="1" />
    </children>

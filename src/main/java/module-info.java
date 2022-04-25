@@ -23,6 +23,7 @@ module com.bayarkhuu.visual {
     exports com.bayarkhuu.visual.labs.lab8;
     exports com.bayarkhuu.visual.labs.lab9;
     exports com.bayarkhuu.visual.labs.lab11;
+    exports com.bayarkhuu.visual.labs.lab12;
     exports com.bayarkhuu.visual.home.home2;
     exports com.bayarkhuu.visual.home.home4;
     exports com.bayarkhuu.visual.home.home5;
@@ -38,10 +39,13 @@ module com.bayarkhuu.visual {
     opens com.bayarkhuu.visual.labs.lab8 to javafx.fxml;
     opens com.bayarkhuu.visual.labs.lab9 to javafx.fxml, jakarta.xml.bind;
     opens com.bayarkhuu.visual.labs.lab11 to javafx.fxml;
+    opens com.bayarkhuu.visual.labs.lab12 to javafx.fxml;
     opens com.bayarkhuu.visual.home.home4 to javafx.fxml;
     opens com.bayarkhuu.visual.home.home5 to javafx.fxml;
     opens com.bayarkhuu.visual.home.home6 to javafx.fxml;
     opens com.bayarkhuu.visual.home.home7 to javafx.fxml;
     opens com.bayarkhuu.visual.home.home8 to javafx.fxml;
     opens com.bayarkhuu.visual.exam.yawts to javafx.fxml;
+    exports com.bayarkhuu.visual.home.home8.model;
+    opens com.bayarkhuu.visual.home.home8.model to javafx.fxml;
 }
