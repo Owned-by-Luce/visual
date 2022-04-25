@@ -12,6 +12,7 @@ module com.bayarkhuu.visual {
     requires java.prefs;
     requires jakarta.xml.bind;
     requires java.sql;
+    requires com.google.gson;
 
     exports com.bayarkhuu.visual.labs.lab1;
     exports com.bayarkhuu.visual.labs.lab2;
@@ -44,7 +45,7 @@ module com.bayarkhuu.visual {
     opens com.bayarkhuu.visual.home.home5 to javafx.fxml;
     opens com.bayarkhuu.visual.home.home6 to javafx.fxml;
     opens com.bayarkhuu.visual.home.home7 to javafx.fxml;
-    opens com.bayarkhuu.visual.home.home8 to javafx.fxml;
+    opens com.bayarkhuu.visual.home.home8 to javafx.fxml, com.google.gson;
     opens com.bayarkhuu.visual.exam.yawts to javafx.fxml;
     exports com.bayarkhuu.visual.home.home8.model;
     opens com.bayarkhuu.visual.home.home8.model to javafx.fxml;

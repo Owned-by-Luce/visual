@@ -1,6 +1,8 @@
 package com.bayarkhuu.visual.labs.lab9;
 
 import com.bayarkhuu.visual.home.home8.annotation.ForeignKey;
+import com.bayarkhuu.visual.home.home8.annotation.Json;
+import com.google.gson.Gson;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -15,6 +17,7 @@ import java.util.stream.Collectors;
 public class Repository<T> {
     private static final String schemaName = "auto_part";
     private final Class<T> clazz;
+    private final Gson gson = new Gson();
 
     public Repository(Class<T> clazz) {
         this.clazz = clazz;
@@ -41,6 +44,8 @@ public class Repository<T> {
                     if (id == null) throw new IllegalAccessException("id field байхгүй байна");
                     id.setAccessible(true);
                     value = id.get(field.get(entity));
+                } else if (field.isAnnotationPresent(Json.class)) {
+                    value = gson.toJson(field.get(entity));
                 } else value = field.get(entity);
                 statement.setObject(i, value);
                 i++;
@@ -113,8 +118,9 @@ public class Repository<T> {
 
             Object value = rs.getObject(field.getName());
             if (field.isAnnotationPresent(ForeignKey.class)) {
-                System.out.println(field.getType().getSimpleName());
                 value = findById(Integer.valueOf(String.valueOf(value)), field.getType());
+            } else if (field.isAnnotationPresent(Json.class)) {
+                value = gson.fromJson(String.valueOf(value), field.getType());
             }
 
             if (value instanceof Date) {

@@ -3,9 +3,9 @@ package com.bayarkhuu.visual.home.home8.model;
 import java.io.Serializable;
 
 public class Item implements Serializable {
-    private int id;
-    private String type;
-    private String name;
+    public int id;
+    public String type;
+    public String name;
 
     public Item() {
 
