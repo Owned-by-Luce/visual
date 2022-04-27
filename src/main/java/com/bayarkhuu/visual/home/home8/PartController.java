@@ -71,7 +71,7 @@ public class PartController {
                 makeItem.getChildren().addAll(repository.findAllByCriteria(e -> e.getMake().getName().equals(el.getMake().getName())).stream().map(model -> {
                     TreeItem<String> modelItem = new TreeItem<>(model.getModel().getName());
 
-                    modelItem.getChildren().addAll(repository.findAllByCriteria(e -> e.getModel().getName().equals(model.getModel().getName())).stream()
+                    modelItem.getChildren().addAll(repository.findAllByCriteria(e -> e.getModel() != null && e.getModel().getName().equals(model.getModel().getName())).stream()
                             .map(category -> new TreeItem<>(category.getCategory().getName())).toList());
 
                     return modelItem;
@@ -87,18 +87,18 @@ public class PartController {
 
         lvAutoParts.getColumns().clear();
         lvAutoParts.getColumns().addAll(
-          addColumn("Part #", Part::getPartNumber, 50),
+          addColumn("Part #", Part::getPartNumber, 80),
           addColumn("Part Name", Part::getPartName, 260),
-          addColumn("Unit Price", Part::getPrice, 65),
+          addColumn("Unit Price", Part::getPrice, 75),
           addColumn("Year", Part::getYear, 65)
         );
         tvSelectedParts.getColumns().clear();
         tvSelectedParts.getColumns().addAll(
-                addColumn("Part #", Part::getPartNumber, 50),
+                addColumn("Part #", Part::getPartNumber, 80),
                 addColumn("Part Name", Part::getPartName, 260),
-                addColumn("Unit Price", Part::getPrice, 65),
+                addColumn("Unit Price", Part::getPrice, 75),
                 addColumn("Qty", Part::getQuantity, 65),
-                addColumn("Sub-Total", e -> e.getPrice() * e.getQuantity(), 65)
+                addColumn("Sub-Total", e -> e.getPrice() * e.getQuantity(), 85)
         );
 
         lvAutoParts.setItems(FXCollections.observableArrayList(allParts));
@@ -133,7 +133,7 @@ public class PartController {
     @FXML
     private void newAutoPart() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("PartEditor.fxml"));
-        new Modal("Part Editor", loader.load(), 425, 238);
+        new Modal("Part Editor", loader.load(), 454, 238);
     }
 
     @FXML

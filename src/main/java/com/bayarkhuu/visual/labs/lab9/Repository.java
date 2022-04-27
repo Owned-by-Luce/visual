@@ -23,7 +23,7 @@ public class Repository<T> {
         this.clazz = clazz;
     }
 
-    public static Connection getConnection() throws SQLException {
+    public synchronized static Connection getConnection() throws SQLException {
         return DriverManager.getConnection("jdbc:mysql://localhost:3306/" + schemaName, "root", "system0705@!");
     }
 
@@ -120,7 +120,7 @@ public class Repository<T> {
             if (field.isAnnotationPresent(ForeignKey.class)) {
                 value = findById(Integer.valueOf(String.valueOf(value)), field.getType());
             } else if (field.isAnnotationPresent(Json.class)) {
-                value = gson.fromJson(String.valueOf(value), field.getType());
+                value = gson.fromJson(String.valueOf(value), field.getGenericType());
             }
 
             if (value instanceof Date) {
