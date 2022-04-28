@@ -51,7 +51,7 @@ public class PartEditorController {
 
     @FXML
     private void newMake() {
-        new Modal("Make Editor", new Editor("Make", e -> cbMakes.getItems().add(e)), 225, 82);
+        new Modal("Make Editor", new Editor("Make", e -> cbMakes.getItems().add(e)), 235, 82);
     }
 
     @FXML
@@ -61,7 +61,7 @@ public class PartEditorController {
 
     @FXML
     private void newCategory() {
-        new Modal("Item Category", new Editor("Category", e -> cbCategories.getItems().add(e)), 245, 82);
+        new Modal("Item Category", new Editor("Category", e -> cbCategories.getItems().add(e)), 252, 82);
     }
 
     @FXML

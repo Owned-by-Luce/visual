@@ -18,7 +18,7 @@ public class Home8App extends Application {
     public void start(Stage primaryStage) throws IOException {
         Home8App.primaryStage = primaryStage;
         FXMLLoader loader = new FXMLLoader(Home8App.class.getResource("PartView.fxml"));
-        Scene scene = new Scene(loader.load(), 741,658);
+        Scene scene = new Scene(loader.load(), 809,658);
         primaryStage.setTitle("College Park Auto-Parts");
         primaryStage.setScene(scene);
         primaryStage.show();
