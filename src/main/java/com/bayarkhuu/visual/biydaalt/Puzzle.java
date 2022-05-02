@@ -77,6 +77,13 @@ public class Puzzle extends Application {
         primaryStage.show();
     }
 
+    /**
+     * VBox дотор зургийг хийж авах
+     *
+     * @param id зургийн нэр буюу ID. Хоосон нүд үүсгэх бол null утга өгөх
+     * @return VBox
+     * @throws FileNotFoundException Файлууд 1, 2, 3, ... 15 гэх нэртэй байна.
+     */
     private VBox getCard(String id) throws FileNotFoundException {
         VBox box = new VBox();
         box.setPrefWidth(100);
@@ -138,19 +145,36 @@ public class Puzzle extends Application {
         return box;
     }
 
+    /**
+     * Чирж тавьж буй зургийн 4 талд хоосон нүд байгаа эсэхийг шалгах
+     * <p>
+     * Аль нэг талд нь хоосон нүд байх үед л зургийг хөдөлгөх боломжтой.
+     *
+     * @param box Чирж буй зураг
+     * @return Зургийг чирж тавих боломжтой бол true, боломжгүй бол false
+     */
     private boolean isNext(VBox box) {
         Integer columnIndex = GridPane.getColumnIndex(box);
         Integer rowIndex = GridPane.getRowIndex(box);
 
+        //4 талын нүдын node-үүдрийг index-ээр нь олох.
         VBox right = getCardFromRoot(columnIndex + 1, rowIndex);
         VBox bottom = getCardFromRoot(columnIndex, rowIndex + 1);
         VBox left = getCardFromRoot(columnIndex - 1, rowIndex);
         VBox top = getCardFromRoot(columnIndex, rowIndex - 1);
 
+        //Аль нэг тал нь хоосон эсэхийг шалгаж байна.
         return Stream.of(top, right, bottom, left).filter(Objects::nonNull)
                 .anyMatch(a -> a.getChildren().isEmpty());
     }
 
+    /**
+     * GridPane-аас мөр, баганы index-ээр node авах
+     *
+     * @param col Баганы index
+     * @param row Мөрийн index
+     * @return index-ээр олдсон node. Олдоогүй бол null
+     */
     private VBox getCardFromRoot(int col, int row) {
         for (Node node : root.getChildren()) {
             if (GridPane.getColumnIndex(node) == col && GridPane.getRowIndex(node) == row) {
@@ -160,6 +184,13 @@ public class Puzzle extends Application {
         return null;
     }
 
+    /**
+     * Image-ээс ImageView үүсгэж авах
+     *
+     * @param image Image
+     * @param id    зургийн id (уг id-аар зөв дараалалд орсон эсэхийг шалгана)
+     * @return imageView
+     */
     private ImageView getImage(Image image, String id) {
         ImageView imageView = new ImageView(image);
         imageView.setFitWidth(100);
@@ -168,13 +199,18 @@ public class Puzzle extends Application {
         return imageView;
     }
 
+    /**
+     * Зөв эвлүүлсэн эсэхийг шалгах
+     */
     private void success() {
+        //Эвлүүлсэн зургуудын ID-г авах
         List<String> ids = root.getChildren()
                 .stream()
                 .map(e -> ((VBox) e))
                 .filter(f -> !f.getChildren().isEmpty())
                 .map(e -> e.getChildren().get(0).getId()).toList();
 
+        //Зөв дараалалтай хүснэгттэй адилхан эсэхийг шалгах
         if (ids.equals(order)) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.initModality(Modality.APPLICATION_MODAL);
@@ -186,19 +222,28 @@ public class Puzzle extends Application {
         }
     }
 
+    /**
+     * Зургуудыг санамсаргүй байдлаар харуулах
+     *
+     * @throws FileNotFoundException Файлууд 1, 2, 3, ... 15 гэх нэртэй байна.
+     */
     private void shuffle() throws FileNotFoundException {
         int row = 0;
         int i = 0;
 
+        //Зөв дараалалтай хүснэгтийг холих
         List<String> shuffle = new ArrayList<>(order);
         Collections.shuffle(shuffle);
 
+        //Хольсон хүснэгтээр зургуудыг үүсгэх
         for (String id : shuffle) {
             root.addRow(row, getCard(String.valueOf(id)));
+            //Дараагийн мөрөнд шилжих
             if (i == 3 || i == 7 || i == 11) row++;
             i++;
         }
 
+        //Хоосон нүд нэмэх
         root.addRow(row, getCard(null));
     }
 }
