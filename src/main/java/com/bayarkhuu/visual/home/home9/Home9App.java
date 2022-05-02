@@ -20,6 +20,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.List;
 
+@SuppressWarnings("Duplicates")
 public class Home9App extends Application {
     private final HBox row1 = new HBox();
     private final HBox row2 = new HBox();
