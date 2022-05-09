@@ -15,7 +15,7 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class Repository<T> {
-    private static final String schemaName = "auto_part";
+    private static final String schemaName = "report_db";
     private final Class<T> clazz;
     private final Gson gson = new Gson();
 
@@ -30,7 +30,7 @@ public class Repository<T> {
     public Integer save(T entity) {
         String q = "?,".repeat(entity.getClass().getDeclaredFields().length);
         q = q.substring(0, q.length() - 1);
-        String query = "insert into " + entity.getClass().getSimpleName().toLowerCase() + " values (" + q + ")";
+        String query = "insert into `" + entity.getClass().getSimpleName().toLowerCase() + "` values (" + q + ")";
 
         try {
             PreparedStatement statement = getConnection().prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
