@@ -20,7 +20,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.function.Supplier;
-import java.util.stream.Collectors;
 
 public class Home10App extends Application {
     private final List<Task<Province>> tasks = new ArrayList<>();
@@ -78,6 +77,12 @@ public class Home10App extends Application {
         primaryStage.show();
     }
 
+    /**
+     * 1 ширхэг аймгийг илэрхийлэх Node
+     *
+     * @param model аймаг
+     * @return Node
+     */
     private HBox row(Province model) {
         final Election task = new Election(model);
         tasks.add(task);
@@ -119,9 +124,14 @@ public class Home10App extends Application {
         return box;
     }
 
+    /**
+     * Санамсаргүйгээр аймаг үүсгэх
+     */
     private List<Province> getRandomProvinces() {
         Random r = new Random();
+        //Аймгийн тоо
         int numberOfDraws = 22;
+        //Нийт сонгогчдын тоо
         int targetSum = 1200000;
 
         List<Integer> load = new ArrayList<>();
@@ -151,11 +161,20 @@ public class Home10App extends Application {
                 "Төв", "Увс", "Ховд", "Хөвсгөл", "Хэнтий"
         );
 
-        return load.stream().map(e -> new Province(names.get(load.indexOf(e)), e, 0, r.nextInt(100 - 80) + 80)).collect(Collectors.toList());
-    }
 
-    private int getRandomBetween(int min, int max) {
-        Random r = new Random();
-        return r.nextInt(max - min) + min;
+        List<Province> provinces = load.stream().map(e -> new Province(names.get(load.indexOf(e)), e, 0, r.nextInt(900 - 850) + 850)).toList();
+        provinces.forEach(province -> {
+            if (province.getPopulation() > 50000) {
+                provinces.stream()
+                        .filter(f -> !f.getName().equals(province.getName()))
+                        .filter(f -> f.getPopulation() + province.getPopulation() < 50000)
+                        .findFirst().ifPresent(el -> {
+                            province.setPopulation(province.getPopulation() - 50000);
+                            el.setPopulation(province.getPopulation());
+                        });
+            }
+        });
+
+        return provinces;
     }
 }

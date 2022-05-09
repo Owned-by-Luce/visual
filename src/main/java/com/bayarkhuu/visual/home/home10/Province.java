@@ -41,4 +41,8 @@ public class Province {
     public void setCurrent(int current) {
         this.current = current;
     }
+
+    public void setPopulation(int population) {
+        this.population = population;
+    }
 }
