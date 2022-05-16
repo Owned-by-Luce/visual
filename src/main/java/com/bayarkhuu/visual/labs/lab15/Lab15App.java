@@ -60,7 +60,7 @@ public class Lab15App extends Application {
         root.getChildren().addAll(btn, table);
 
         Scene scene = new Scene(root, 500, 180);
-        primaryStage.setTitle("Lab 13");
+        primaryStage.setTitle("Lab 15");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
@@ -92,14 +92,12 @@ public class Lab15App extends Application {
 //        jviewer.setVisible(true);
 
         File file = new File(Constant.PATH_STATIC + "/jaspers/out/temp.html");
-        URL url = null;
         try {
-            url = file.toURI().toURL();
+            URL url = file.toURI().toURL();
+            engine.load(url.toString());
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-
-        engine.load(url.toString());
 
         return web;
     }
