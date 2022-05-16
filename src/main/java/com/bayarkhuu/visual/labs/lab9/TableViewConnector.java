@@ -1,5 +1,7 @@
 package com.bayarkhuu.visual.labs.lab9;
 
+import com.bayarkhuu.visual.utils.Repository;
+
 import java.sql.SQLException;
 
 public class TableViewConnector {

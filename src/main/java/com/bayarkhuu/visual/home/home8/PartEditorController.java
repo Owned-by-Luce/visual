@@ -2,7 +2,7 @@ package com.bayarkhuu.visual.home.home8;
 
 import com.bayarkhuu.visual.home.home8.model.Item;
 import com.bayarkhuu.visual.home.home8.model.Part;
-import com.bayarkhuu.visual.labs.lab9.Repository;
+import com.bayarkhuu.visual.utils.Repository;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

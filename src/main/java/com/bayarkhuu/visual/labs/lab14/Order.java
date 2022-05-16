@@ -17,4 +17,24 @@ public class Order {
         this.price = price;
         this.address = address;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public String getAddress() {
+        return address;
+    }
 }

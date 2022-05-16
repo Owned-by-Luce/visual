@@ -1,4 +1,4 @@
-package com.bayarkhuu.visual.labs.lab9;
+package com.bayarkhuu.visual.utils;
 
 import com.bayarkhuu.visual.home.home8.annotation.ForeignKey;
 import com.bayarkhuu.visual.home.home8.annotation.Json;
@@ -63,7 +63,7 @@ public class Repository<T> {
 
     public T findById(Integer id) {
         try {
-            String query = "select * from " + clazz.getSimpleName().toLowerCase() + " where id = " + id;
+            String query = "select * from `" + clazz.getSimpleName().toLowerCase() + "` where id = " + id;
             ResultSet rs = getConnection().createStatement().executeQuery(query);
 
             if (rs.next()) {
@@ -78,7 +78,7 @@ public class Repository<T> {
 
     private <Q> Q findById(Integer id, Class<Q> clazzQ) {
         try {
-            String query = "select * from " + clazzQ.getSimpleName().toLowerCase() + " where id = " + id;
+            String query = "select * from `" + clazzQ.getSimpleName().toLowerCase() + "` where id = " + id;
             ResultSet rs = getConnection().createStatement().executeQuery(query);
 
             if (rs.next()) {
@@ -93,7 +93,7 @@ public class Repository<T> {
 
     public List<T> findAllByCriteria(Predicate<T> criteria) {
         try {
-            String query = "select * from " + clazz.getSimpleName().toLowerCase();
+            String query = "select * from `" + clazz.getSimpleName().toLowerCase() + "`";
             ResultSet rs = getConnection().createStatement().executeQuery(query);
 
             List<T> list = new ArrayList<>();

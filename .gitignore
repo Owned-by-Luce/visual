@@ -3,3 +3,5 @@
 .idea/
 
 /jasperoutput/
+
+/src/main/resources/static/jaspers/out/
