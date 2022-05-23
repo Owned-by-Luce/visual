@@ -1,6 +1,5 @@
 package com.bayarkhuu.visual.exam.yawts2;
 
-import javafx.application.Application;
 import javafx.concurrent.WorkerStateEvent;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
@@ -18,7 +17,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
-public class ExamApp2App extends Application {
+public class Application extends javafx.application.Application {
     //Төмс хураалтын үед тайлбайг 4 хуваах шаардлагатай учир 4 list үүсгэв
     private final List<Potato> field1 = new ArrayList<>();
     private final List<Potato> field2 = new ArrayList<>();
